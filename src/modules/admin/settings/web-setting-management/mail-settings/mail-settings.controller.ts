@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Put } from '@nestjs/common';
+import { Body, Controller, Get, Post, Put } from '@nestjs/common';
 import { MailSettingsService } from './mail-settings.service';
 import { ResponseData } from 'src/global/globalClass';
 import { MailSettings } from './interface/mail-settings.interface';
@@ -44,6 +44,18 @@ export class MailSettingsController {
         HttpStatus.ERROR,
         HttpMessage.ERROR,
       );
+    }
+  }
+
+  @Post('send-email')
+  async sendEmail(@Body() body: { to: string }): Promise<string> {
+    try {
+      const { to } = body;
+      await this.mailSettingsService.sendEmail(to);
+      return 'Email sent successfully';
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return 'Error sending email';
     }
   }
 }
