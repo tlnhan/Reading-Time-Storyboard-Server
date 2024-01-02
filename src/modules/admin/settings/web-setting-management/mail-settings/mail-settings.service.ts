@@ -39,6 +39,7 @@ export class MailSettingsService {
       from: mailSettings.Email_Sending_Address,
       to,
       html: mailSettings.Email_Template,
+      subject: 'Notifications from English Wing',
     };
     await transporter.sendMail(mailOptions);
   }
