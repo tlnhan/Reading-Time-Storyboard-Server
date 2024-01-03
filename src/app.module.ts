@@ -20,6 +20,7 @@ import { MainMenuMobileModule } from './modules/admin/settings/web-setting-manag
 import { CustomerServiceMobileModule } from './modules/admin/settings/web-setting-management/customer-service-mobile/customer-service-mobile.module';
 import { MainPageProductPCModule } from './modules/admin/settings/web-setting-management/main-page-product-pc/main-page-product-pc.module';
 import { MainPageProductMobileModule } from './modules/admin/settings/web-setting-management/main-page-product-mobile/main-page-product-mobile.module';
+import { SMSSettingsModule } from './modules/admin/settings/web-setting-management/sms-settings/sms-settings.module';
 dotenv.config();
 
 @Module({
@@ -42,6 +43,7 @@ dotenv.config();
     CustomerServiceMobileModule,
     MainPageProductPCModule,
     MainPageProductMobileModule,
+    SMSSettingsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
