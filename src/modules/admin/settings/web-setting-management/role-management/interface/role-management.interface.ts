@@ -1,17 +1,17 @@
 import { Document } from 'mongoose';
 
 export interface RoleManagement extends Document {
-  readonly _Name: String;
-  readonly Nickname: String;
-  readonly Email: String;
-  readonly Password: String;
-  readonly Gender: Boolean;
+  readonly _Name: string;
+  readonly Nickname: string;
+  readonly Email: string;
+  readonly Password: string;
+  readonly Gender: boolean;
   readonly Birth: Date;
-  readonly Country: String;
-  readonly Contract_Type: String;
-  readonly _Contract: String;
+  readonly Country: string;
+  readonly Contract_Type: string;
+  readonly _Contract: string;
   readonly _Start_Date: Date;
   readonly Registration_Date: Date;
-  readonly Authority_Type: String;
-  readonly _Image: String;
+  readonly Authority_Type: string;
+  readonly _Image: string;
 }

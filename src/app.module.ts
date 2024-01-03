@@ -23,6 +23,7 @@ import { MainPageProductMobileModule } from './modules/admin/settings/web-settin
 import { SMSSettingsModule } from './modules/admin/settings/web-setting-management/sms-settings/sms-settings.module';
 import { HolidayManagementModule } from './modules/admin/settings/web-setting-management/holiday-management/holiday-management.module';
 import { MenuPermissionManagementModule } from './modules/admin/settings/web-setting-management/menu-permission-management/menu-permission-management.module';
+import { RoleManagementModule } from './modules/admin/settings/web-setting-management/role-management/role-management.module';
 dotenv.config();
 
 @Module({
@@ -48,6 +49,7 @@ dotenv.config();
     SMSSettingsModule,
     HolidayManagementModule,
     MenuPermissionManagementModule,
+    RoleManagementModule,
   ],
   controllers: [AppController],
   providers: [AppService],

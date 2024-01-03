@@ -7,7 +7,10 @@ import { MenuPermissionManagementService } from './menu-permission-management.se
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: 'MenuPermissionManagement', schema: MenuPermissionManagementSchema },
+      {
+        name: 'MenuPermissionManagement',
+        schema: MenuPermissionManagementSchema,
+      },
     ]),
   ],
   controllers: [MenuPermissionManagementController],

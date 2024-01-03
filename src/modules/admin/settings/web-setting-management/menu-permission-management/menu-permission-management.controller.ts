@@ -7,12 +7,17 @@ import { MenuPermissionManagementDto } from './dto/menu-permission-management.dt
 
 @Controller('menu-permission-management')
 export class MenuPermissionManagementController {
-  constructor(private readonly menuPermissionManagementService: MenuPermissionManagementService) {}
+  constructor(
+    private readonly menuPermissionManagementService: MenuPermissionManagementService,
+  ) {}
 
   @Get()
-  async getMenuPermissionManagement(): Promise<ResponseData<MenuPermissionManagement[]>> {
+  async getMenuPermissionManagement(): Promise<
+    ResponseData<MenuPermissionManagement[]>
+  > {
     try {
-      const data = await this.menuPermissionManagementService.getMenuPermissionManagement();
+      const data =
+        await this.menuPermissionManagementService.getMenuPermissionManagement();
       return new ResponseData<MenuPermissionManagement[]>(
         data,
         HttpStatus.SUCCESS,
@@ -32,7 +37,10 @@ export class MenuPermissionManagementController {
     @Body() menuPermissionManagement: MenuPermissionManagement,
   ): Promise<ResponseData<MenuPermissionManagement>> {
     try {
-      const data = await this.menuPermissionManagementService.updateMenuPermissionManagement(menuPermissionManagement);
+      const data =
+        await this.menuPermissionManagementService.updateMenuPermissionManagement(
+          menuPermissionManagement,
+        );
       return new ResponseData<MenuPermissionManagement>(
         data,
         HttpStatus.SUCCESS,
@@ -52,7 +60,10 @@ export class MenuPermissionManagementController {
     @Body() menuPermissionManagementDto: MenuPermissionManagementDto,
   ): Promise<ResponseData<MenuPermissionManagement>> {
     try {
-      const data = await this.menuPermissionManagementService.createMenuPermissionManagement(menuPermissionManagementDto);
+      const data =
+        await this.menuPermissionManagementService.createMenuPermissionManagement(
+          menuPermissionManagementDto,
+        );
       return new ResponseData<MenuPermissionManagement>(
         data,
         HttpStatus.SUCCESS,
@@ -68,12 +79,21 @@ export class MenuPermissionManagementController {
   }
 
   @Delete()
-  async deleteMenuPermissionManagement(@Body('_id') _id: number): Promise<ResponseData<any>> {
-      try {
-          const data = await this.menuPermissionManagementService.deleteMenuPermissionManagementById(_id);
-          return new ResponseData<any>(data, HttpStatus.SUCCESS, HttpMessage.SUCCESS);
-      } catch (error) {
-          return new ResponseData<any>(null, HttpStatus.ERROR, HttpMessage.ERROR);
-      }
+  async deleteMenuPermissionManagement(
+    @Body('_id') _id: number,
+  ): Promise<ResponseData<any>> {
+    try {
+      const data =
+        await this.menuPermissionManagementService.deleteMenuPermissionManagementById(
+          _id,
+        );
+      return new ResponseData<any>(
+        data,
+        HttpStatus.SUCCESS,
+        HttpMessage.SUCCESS,
+      );
+    } catch (error) {
+      return new ResponseData<any>(null, HttpStatus.ERROR, HttpMessage.ERROR);
+    }
   }
 }

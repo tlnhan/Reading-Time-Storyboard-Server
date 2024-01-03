@@ -1,7 +1,10 @@
-import * as mongoose from 'mongoose'
+import * as mongoose from 'mongoose';
 
-export const MenuPermissionManagementSchema = new mongoose.Schema({
+export const MenuPermissionManagementSchema = new mongoose.Schema(
+  {
     Role: String,
     Slug: String,
     Apply: Boolean,
-});
+  },
+  { timestamps: true },
+);

@@ -55,10 +55,14 @@ export class SMSSettingsController {
         smsData.to,
         smsData.body,
       );
-      return new ResponseData<any>(result, HttpStatus.SUCCESS, HttpMessage.SUCCESS);
+      return new ResponseData<any>(
+        result,
+        HttpStatus.SUCCESS,
+        HttpMessage.SUCCESS,
+      );
     } catch (error) {
       console.error('Error in sendSMS:', error);
       return new ResponseData<any>(null, HttpStatus.ERROR, HttpMessage.ERROR);
     }
   }
-  }
+}
