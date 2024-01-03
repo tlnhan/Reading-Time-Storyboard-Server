@@ -47,7 +47,7 @@ export class MailSettingsController {
     }
   }
 
-  @Post('send-email')
+  @Post()
   async sendEmail(@Body() body: { to: string }): Promise<string> {
     try {
       const { to } = body;

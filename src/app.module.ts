@@ -21,6 +21,8 @@ import { CustomerServiceMobileModule } from './modules/admin/settings/web-settin
 import { MainPageProductPCModule } from './modules/admin/settings/web-setting-management/main-page-product-pc/main-page-product-pc.module';
 import { MainPageProductMobileModule } from './modules/admin/settings/web-setting-management/main-page-product-mobile/main-page-product-mobile.module';
 import { SMSSettingsModule } from './modules/admin/settings/web-setting-management/sms-settings/sms-settings.module';
+import { HolidayManagementModule } from './modules/admin/settings/web-setting-management/holiday-management/holiday-management.module';
+import { MenuPermissionManagementModule } from './modules/admin/settings/web-setting-management/menu-permission-management/menu-permission-management.module';
 dotenv.config();
 
 @Module({
@@ -44,6 +46,8 @@ dotenv.config();
     MainPageProductPCModule,
     MainPageProductMobileModule,
     SMSSettingsModule,
+    HolidayManagementModule,
+    MenuPermissionManagementModule,
   ],
   controllers: [AppController],
   providers: [AppService],
