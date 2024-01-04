@@ -12,4 +12,5 @@ export class RoleManagementDto {
   readonly Registration_Date: Date;
   readonly Authority_Type: string;
   readonly _Image: string;
+  readonly Role: string;
 }

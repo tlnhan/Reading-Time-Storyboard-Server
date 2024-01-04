@@ -18,6 +18,7 @@ export const AccountUserSchema = new mongoose.Schema(
     Signup_Path: String,
     Course: Number,
     Billing: Number,
+    Role: String,
   },
   { timestamps: true },
 );
