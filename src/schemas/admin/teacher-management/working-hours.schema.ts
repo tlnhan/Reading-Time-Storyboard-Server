@@ -6,50 +6,20 @@ export const WorkingHoursSchema = new mongoose.Schema(
     Teacher_Nickname: String,
     Team: String,
     Team_Leader: String,
-    schedule: {
-      Mon: [
-        {
-          startTime: String,
-          endTime: String,
+    schedule: [
+      {
+        time: String,
+        days: {
+          Mon: Boolean,
+          Tue: Boolean,
+          Wed: Boolean,
+          Thu: Boolean,
+          Fri: Boolean,
+          Sat: Boolean,
+          Sun: Boolean,
         },
-      ],
-      Tue: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-      Wed: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-      Thu: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-      Fri: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-      Sat: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-      Sun: [
-        {
-          startTime: String,
-          endTime: String,
-        },
-      ],
-    },
+      },
+    ],
   },
   { timestamps: true },
 );

@@ -6,28 +6,34 @@ import { HolidayManagementDto } from './dto/holiday-management.dto';
 
 @Injectable()
 export class HolidayManagementService {
-    constructor(
-        @InjectModel('HolidayManagement')
-        private readonly holidayManagementModel: Model<HolidayManagement>,
-    ) {}
+  constructor(
+    @InjectModel('HolidayManagement')
+    private readonly holidayManagementModel: Model<HolidayManagement>,
+  ) {}
 
-    async getHolidayManagement(): Promise<HolidayManagement[]> {
-        return this.holidayManagementModel.find().exec();
-    }
+  async getHolidayManagement(): Promise<HolidayManagement[]> {
+    return this.holidayManagementModel.find().exec();
+  }
 
-    async updateHolidayManagement(holidayManagement: HolidayManagement): Promise<HolidayManagement> {
-        const { _id, ...updatedData } = holidayManagement;
-        return this.holidayManagementModel
-            .findOneAndUpdate({ _id }, updatedData, { new: true })
-            .exec();
-    }
+  async updateHolidayManagement(
+    holidayManagement: HolidayManagement,
+  ): Promise<HolidayManagement> {
+    const { _id, ...updatedData } = holidayManagement;
+    return this.holidayManagementModel
+      .findOneAndUpdate({ _id }, updatedData, { new: true })
+      .exec();
+  }
 
-    async createHolidayManagement(holidayManagementDto: HolidayManagementDto): Promise<HolidayManagement> {
-        const createdHolidayManagement = new this.holidayManagementModel(holidayManagementDto);
-        return createdHolidayManagement.save();
-    }
+  async createHolidayManagement(
+    holidayManagementDto: HolidayManagementDto,
+  ): Promise<HolidayManagement> {
+    const createdRoleManagement = new this.holidayManagementModel(
+      holidayManagementDto,
+    );
+    return createdRoleManagement.save();
+  }
 
-    async deleteHolidayManagementById(_id: number): Promise<any> {
-        return this.holidayManagementModel.deleteOne({ _id: _id }).exec();
-    }
+  async deleteHolidayManagementById(_id: number): Promise<any> {
+    return this.holidayManagementModel.deleteOne({ _id: _id }).exec();
+  }
 }
