@@ -15,14 +15,14 @@ export class AccountUserService {
     return this.accountUserModel.find().exec();
   }
 
-  async getAccountUserId(Id: number): Promise<AccountUser> {
-    return this.accountUserModel.findOne({ Id }).exec();
+  async getAccountUserId(_id: string): Promise<AccountUser> {
+    return this.accountUserModel.findOne({ _id }).exec();
   }
 
   async updateAccountUser(accountUser: AccountUser): Promise<AccountUser> {
-    const { Id, ...updatedData } = accountUser;
+    const { _id, ...updatedData } = accountUser;
     return this.accountUserModel
-      .findOneAndUpdate({ Id }, updatedData, { new: true })
+      .findOneAndUpdate({ _id }, updatedData, { new: true })
       .exec();
   }
 

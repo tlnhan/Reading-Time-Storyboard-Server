@@ -28,11 +28,11 @@ export class AccountUserController {
   }
 
   @Get('detail')
-  async getAccountUserId(
-    @Body() Id: number,
+  async getAccountUser_Id(
+    @Body() _id: string,
   ): Promise<ResponseData<AccountUser>> {
     try {
-      const data = await this.accountUserService.getAccountUserId(Id);
+      const data = await this.accountUserService.getAccountUserId(_id);
       return new ResponseData<AccountUser>(
         data,
         HttpStatus.SUCCESS,

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { VacationResignationManagementController } from './vacation-resignation-management.controller';
-import { VacationResignationManagementSchema } from '../../../../schemas/admin/teacher-management/vacation-resignation-management';
+import { VacationResignationManagementSchema } from '../../../../schemas/admin/teacher-management/vacation-resignation-management.schema';
 import { VacationResignationManagementService } from './vacation-resignation-management.service';
 
 @Module({
