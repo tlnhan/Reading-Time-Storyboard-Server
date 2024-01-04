@@ -17,4 +17,5 @@ export interface AccountUser extends Document {
   readonly Signup_Path: string;
   readonly Course: number;
   readonly Billing: number;
+  readonly Role: string;
 }

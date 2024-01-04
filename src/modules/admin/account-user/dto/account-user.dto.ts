@@ -15,4 +15,5 @@ export class AccountUserDto {
   readonly Signup_Path: string;
   readonly Course: number;
   readonly Billing: number;
+  readonly Role: string;
 }

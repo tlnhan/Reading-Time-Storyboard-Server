@@ -20,6 +20,7 @@ export class AuthenticationService {
     const payload = {
       Email: user.Email,
       Password: user.Password,
+      Role: user.Role,
     };
 
     return this.jwtService.sign(payload);
