@@ -27,4 +27,13 @@ export class RoleManagementService {
     );
     return createdRoleManagement.save();
   }
+
+  async updateRoleManagement(
+    roleManagement: RoleManagement,
+  ): Promise<RoleManagement> {
+    const { _id, ...updatedData } = roleManagement;
+    return this.roleManagementModel
+      .findOneAndUpdate({ _id }, updatedData, { new: true })
+      .exec();
+  }
 }

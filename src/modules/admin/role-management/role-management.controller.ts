@@ -1,4 +1,4 @@
-import { Controller, Get, Body, Post } from '@nestjs/common';
+import { Controller, Get, Body, Post, Put } from '@nestjs/common';
 import { ResponseData } from 'src/global/globalClass';
 import { HttpMessage, HttpStatus } from 'src/global/globalEnum';
 import { RoleManagement } from './interface/role-management.interface';
@@ -56,5 +56,26 @@ export class RoleManagementController {
   ): Promise<RoleManagement> {
     const { _id } = body;
     return this.roleManagementService.getRoleManagementById(_id);
+  }
+
+  @Put()
+  async updateRoleManagement(
+    @Body() roleManagement: RoleManagement,
+  ): Promise<ResponseData<RoleManagement>> {
+    try {
+      const data =
+        await this.roleManagementService.updateRoleManagement(roleManagement);
+      return new ResponseData<RoleManagement>(
+        data,
+        HttpStatus.SUCCESS,
+        HttpMessage.SUCCESS,
+      );
+    } catch (error) {
+      return new ResponseData<RoleManagement>(
+        null,
+        HttpStatus.ERROR,
+        HttpMessage.ERROR,
+      );
+    }
   }
 }

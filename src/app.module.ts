@@ -23,7 +23,9 @@ import { MainPageProductMobileModule } from './modules/admin/settings/web-settin
 import { SMSSettingsModule } from './modules/admin/settings/web-setting-management/sms-settings/sms-settings.module';
 import { HolidayManagementModule } from './modules/admin/settings/web-setting-management/holiday-management/holiday-management.module';
 import { MenuPermissionManagementModule } from './modules/admin/settings/web-setting-management/menu-permission-management/menu-permission-management.module';
-import { RoleManagementModule } from './modules/admin/settings/web-setting-management/role-management/role-management.module';
+import { RoleManagementModule } from './modules/admin/role-management/role-management.module';
+import { AccountTeacherModule } from './modules/admin/teacher/account-teacher/account-teacher.module';
+import { WorkingHoursModule } from './modules/admin/teacher/working-hours/working-hours.module';
 dotenv.config();
 
 @Module({
@@ -50,6 +52,8 @@ dotenv.config();
     HolidayManagementModule,
     MenuPermissionManagementModule,
     RoleManagementModule,
+    AccountTeacherModule,
+    WorkingHoursModule,
   ],
   controllers: [AppController],
   providers: [AppService],

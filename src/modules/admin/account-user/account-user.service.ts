@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { AccountUser } from './interface/account-user.interface';
+import { AccountUserDto } from './dto/account-user.dto';
 
 @Injectable()
 export class AccountUserService {
@@ -23,5 +24,12 @@ export class AccountUserService {
     return this.accountUserModel
       .findOneAndUpdate({ Id }, updatedData, { new: true })
       .exec();
+  }
+
+  async createAccountUser(
+    accountUserDto: AccountUserDto,
+  ): Promise<AccountUser> {
+    const createdRoleManagement = new this.accountUserModel(accountUserDto);
+    return createdRoleManagement.save();
   }
 }
