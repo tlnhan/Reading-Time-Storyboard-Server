@@ -9,15 +9,13 @@ export const WorkingHoursSchema = new mongoose.Schema(
     schedule: [
       {
         time: String,
-        days: {
-          Mon: Boolean,
-          Tue: Boolean,
-          Wed: Boolean,
-          Thu: Boolean,
-          Fri: Boolean,
-          Sat: Boolean,
-          Sun: Boolean,
-        },
+        Mon: Boolean,
+        Tue: Boolean,
+        Wed: Boolean,
+        Thu: Boolean,
+        Fri: Boolean,
+        Sat: Boolean,
+        Sun: Boolean,
       },
     ],
   },

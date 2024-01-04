@@ -5,14 +5,12 @@ export class WorkingHoursDto {
   readonly Team_Leader: string;
   readonly schedule: {
     time: string;
-    days: {
-      Mon: boolean;
-      Tue: boolean;
-      Wed: boolean;
-      Thu: boolean;
-      Fri: boolean;
-      Sat: boolean;
-      Sun: boolean;
-    };
+    Mon: boolean;
+    Tue: boolean;
+    Wed: boolean;
+    Thu: boolean;
+    Fri: boolean;
+    Sat: boolean;
+    Sun: boolean;
   }[];
 }
