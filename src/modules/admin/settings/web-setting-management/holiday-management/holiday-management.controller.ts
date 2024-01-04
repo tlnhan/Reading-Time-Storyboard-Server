@@ -54,12 +54,12 @@ export class HolidayManagementController {
 
   @Post()
   async createHolidayManagement(
-    @Body() HolidayManagementDto: HolidayManagementDto,
+    @Body() holidayManagementDto: HolidayManagementDto,
   ): Promise<ResponseData<HolidayManagement>> {
     try {
       const data =
         await this.holidayManagementService.createHolidayManagement(
-          HolidayManagementDto,
+          holidayManagementDto,
         );
       return new ResponseData<HolidayManagement>(
         data,
