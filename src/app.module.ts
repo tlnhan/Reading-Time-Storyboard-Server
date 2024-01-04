@@ -29,6 +29,7 @@ import { WorkingHoursModule } from './modules/admin/teacher/working-hours/workin
 import { VacationResignationManagementModule } from './modules/admin/teacher/vacation-resignation-management/vacation-resignation-management.module';
 import { ClassFeedbackModule } from './modules/admin/teacher/class-feedback/class-feedback.module';
 import { PointPenaltyManagementModule } from './modules/admin/teacher/point-penalty-management/point-penalty-management.module';
+import { RoleModule } from './modules/admin/role/role.module';
 dotenv.config();
 
 @Module({
@@ -60,6 +61,7 @@ dotenv.config();
     VacationResignationManagementModule,
     ClassFeedbackModule,
     PointPenaltyManagementModule,
+    RoleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
