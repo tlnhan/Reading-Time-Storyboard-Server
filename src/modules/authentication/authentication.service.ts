@@ -16,13 +16,17 @@ export class AuthenticationService {
     return this.accountUserModel.findOne({ Email: email }).exec();
   }
 
-  async generateToken(user: AccountUser): Promise<string> {
+  async generateToken(
+    user: AccountUser,
+  ): Promise<{ authToken: string; userRole: string }> {
     const payload = {
       Email: user.Email,
       Password: user.Password,
-      Role: user.Role,
     };
 
-    return this.jwtService.sign(payload);
+    const role = user.Role;
+    const authToken = this.jwtService.sign(payload);
+
+    return { authToken, userRole: role };
   }
 }

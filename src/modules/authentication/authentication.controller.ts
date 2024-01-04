@@ -10,28 +10,29 @@ export class AuthenticationController {
   @Post('login')
   async login(
     @Body() credentials: { Email: string; Password: string },
-  ): Promise<ResponseData<string>> {
+  ): Promise<ResponseData<{ authToken: string; userRole: string }>> {
     try {
       const user = await this.authenticationService.findOneByUsername(
         credentials.Email,
       );
 
       if (!user || credentials.Password !== user.Password) {
-        return new ResponseData<string>(
+        return new ResponseData<{ authToken: string; userRole: string }>(
           null,
           HttpStatus.ERROR,
           HttpMessage.ERROR,
         );
       }
 
-      const token = await this.authenticationService.generateToken(user);
-      return new ResponseData<string>(
-        token,
+      const { authToken, userRole } =
+        await this.authenticationService.generateToken(user);
+      return new ResponseData<{ authToken: string; userRole: string }>(
+        { authToken, userRole },
         HttpStatus.SUCCESS,
         HttpMessage.SUCCESS,
       );
     } catch (error) {
-      return new ResponseData<string>(
+      return new ResponseData<{ authToken: string; userRole: string }>(
         null,
         HttpStatus.ERROR,
         HttpMessage.ERROR,
