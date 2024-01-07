@@ -30,6 +30,8 @@ import { VacationResignationManagementModule } from './modules/admin/teacher/vac
 import { ClassFeedbackModule } from './modules/admin/teacher/class-feedback/class-feedback.module';
 import { PointPenaltyManagementModule } from './modules/admin/teacher/point-penalty-management/point-penalty-management.module';
 import { RoleModule } from './modules/admin/role/role.module';
+import { BookModule } from './modules/admin/book/book.module';
+import { CurriculumModule } from './modules/admin/curriculum/curriculum.module';
 dotenv.config();
 
 @Module({
@@ -62,6 +64,8 @@ dotenv.config();
     ClassFeedbackModule,
     PointPenaltyManagementModule,
     RoleModule,
+    BookModule,
+    CurriculumModule,
   ],
   controllers: [AppController],
   providers: [AppService],

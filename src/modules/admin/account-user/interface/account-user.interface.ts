@@ -11,7 +11,7 @@ export interface AccountUser extends Document {
   readonly Description: string;
   readonly Picture: string;
   readonly Admission: string;
-  readonly List_of_Tags: string;
+  readonly List_of_Tags: string[];
   readonly English_Wing_Member: string;
   readonly Referal_Code: string;
   readonly Signup_Path: string;
