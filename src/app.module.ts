@@ -35,6 +35,7 @@ import { CurriculumModule } from './modules/admin/curriculum/curriculum.module';
 import { RegularProductModule } from './modules/admin/product-management/regular-product/regular-product.module';
 import { FreeTrialProductModule } from './modules/admin/product-management/free-trial-product/free-trial-product.module';
 import { PaymentManagementModule } from './modules/admin/payment-management/payment-management.module';
+import { CouponModule } from './modules/admin/website-management/coupon/coupon.module';
 dotenv.config();
 
 @Module({
@@ -72,6 +73,7 @@ dotenv.config();
     RegularProductModule,
     FreeTrialProductModule,
     PaymentManagementModule,
+    CouponModule,
   ],
   controllers: [AppController],
   providers: [AppService],
