@@ -32,6 +32,9 @@ import { PointPenaltyManagementModule } from './modules/admin/teacher/point-pena
 import { RoleModule } from './modules/admin/role/role.module';
 import { BookModule } from './modules/admin/book/book.module';
 import { CurriculumModule } from './modules/admin/curriculum/curriculum.module';
+import { RegularProductModule } from './modules/admin/product-management/regular-product/regular-product.module';
+import { FreeTrialProductModule } from './modules/admin/product-management/free-trial-product/free-trial-product.module';
+import { PaymentManagementModule } from './modules/admin/payment-management/payment-management.module';
 dotenv.config();
 
 @Module({
@@ -66,6 +69,9 @@ dotenv.config();
     RoleModule,
     BookModule,
     CurriculumModule,
+    RegularProductModule,
+    FreeTrialProductModule,
+    PaymentManagementModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -6,7 +6,7 @@ export interface WorkingHours extends Document {
   readonly Team: string;
   readonly Team_Leader: string;
   readonly schedule: {
-    time: string;
+    time: Date;
     Mon: boolean;
     Tue: boolean;
     Wed: boolean;

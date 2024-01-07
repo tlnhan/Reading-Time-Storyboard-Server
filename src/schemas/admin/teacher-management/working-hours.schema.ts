@@ -8,7 +8,7 @@ export const WorkingHoursSchema = new mongoose.Schema(
     Team_Leader: String,
     schedule: [
       {
-        time: String,
+        time: Date,
         Mon: Boolean,
         Tue: Boolean,
         Wed: Boolean,
