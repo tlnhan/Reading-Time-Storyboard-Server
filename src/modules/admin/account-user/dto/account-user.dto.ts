@@ -8,9 +8,9 @@ export class AccountUserDto {
   readonly Country: string;
   readonly Description: string;
   readonly Picture: string;
-  readonly Admission: string;
+  readonly Admission: string[];
   readonly List_of_Tags: string[];
-  readonly English_Wing_Member: string;
+  readonly English_Wing_Member: string[];
   readonly Referal_Code: string;
   readonly Signup_Path: string;
   readonly Course: number;
