@@ -36,6 +36,8 @@ import { RegularProductModule } from './modules/admin/product-management/regular
 import { FreeTrialProductModule } from './modules/admin/product-management/free-trial-product/free-trial-product.module';
 import { PaymentManagementModule } from './modules/admin/payment-management/payment-management.module';
 import { CouponModule } from './modules/admin/website-management/coupon/coupon.module';
+import { BoardSupportModule } from './modules/admin/website-management/board/support/banner-support.module';
+import { BannerModule } from './modules/admin/website-management/banner/banner.module';
 dotenv.config();
 
 @Module({
@@ -74,6 +76,8 @@ dotenv.config();
     FreeTrialProductModule,
     PaymentManagementModule,
     CouponModule,
+    BannerModule,
+    BoardSupportModule,
   ],
   controllers: [AppController],
   providers: [AppService],
