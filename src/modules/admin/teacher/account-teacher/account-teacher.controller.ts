@@ -83,6 +83,7 @@ export class AccountTeacherController {
         HttpMessage.SUCCESS,
       );
     } catch (error) {
+      console.log(error);
       return new ResponseData<AccountTeacher>(
         null,
         HttpStatus.ERROR,

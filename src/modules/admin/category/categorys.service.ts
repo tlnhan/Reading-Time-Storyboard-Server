@@ -7,10 +7,10 @@ import { Category } from './interface/category.interface';
 export class CategoryService {
   constructor(
     @InjectModel('Category')
-    private readonly CategoryModel: Model<Category>,
+    private readonly categoryModel: Model<Category>,
   ) {}
 
   async getCategoryByType(type: string): Promise<Category[]> {
-    return this.CategoryModel.find({ type }).exec();
+    return this.categoryModel.find({ type }).exec();
   }
 }
