@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CurriculumController } from './curriculum.controller';
-import { CurriculumSchema } from '../../../schemas/admin/curriculum.schema';
+import { CurriculumSchema } from '../../../../schemas/admin/content-management/curriculum.schema';
 import { CurriculumService } from './curriculum.service';
 
 @Module({

@@ -30,14 +30,16 @@ import { VacationResignationManagementModule } from './modules/admin/teacher/vac
 import { ClassFeedbackModule } from './modules/admin/teacher/class-feedback/class-feedback.module';
 import { PointPenaltyManagementModule } from './modules/admin/teacher/point-penalty-management/point-penalty-management.module';
 import { RoleModule } from './modules/admin/role/role.module';
-import { BookModule } from './modules/admin/book/book.module';
-import { CurriculumModule } from './modules/admin/curriculum/curriculum.module';
+import { BookModule } from './modules/admin/content-management/book/book.module';
+import { CurriculumModule } from './modules/admin/content-management/curriculum/curriculum.module';
 import { RegularProductModule } from './modules/admin/product-management/regular-product/regular-product.module';
 import { FreeTrialProductModule } from './modules/admin/product-management/free-trial-product/free-trial-product.module';
 import { PaymentManagementModule } from './modules/admin/payment-management/payment-management.module';
 import { CouponModule } from './modules/admin/website-management/coupon/coupon.module';
-import { BoardSupportModule } from './modules/admin/website-management/board/support/banner-support.module';
+import { BoardSupportModule } from './modules/admin/website-management/board/support/board-support.module';
 import { BannerModule } from './modules/admin/website-management/banner/banner.module';
+import { BoardNoticeFAQModule } from './modules/admin/website-management/board/notice-faq/board-notice-faq.module';
+import { CategoryModule } from './modules/admin/category/category.module';
 dotenv.config();
 
 @Module({
@@ -78,6 +80,8 @@ dotenv.config();
     CouponModule,
     BannerModule,
     BoardSupportModule,
+    BoardNoticeFAQModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
